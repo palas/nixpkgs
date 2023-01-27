@@ -3,7 +3,6 @@
 stdenv.mkDerivation rec {
   pname = "epson-201202w";
   version = "1.0.0";
-  filterVersion = "1.0.0";
 
   src = fetchurl {
     # NOTE: Don't forget to update the webarchive link too!
@@ -22,12 +21,12 @@ stdenv.mkDerivation rec {
   unpackPhase = ''
     rpmextract $src
     tar -zxf epson-inkjet-printer-201202w-${version}.tar.gz
-    tar -zxf epson-inkjet-printer-filter-${filterVersion}.tar.gz
+    tar -zxf epson-inkjet-printer-filter-${version}.tar.gz
     for ppd in epson-inkjet-printer-201202w-${version}/ppds/*; do
       substituteInPlace $ppd --replace "/opt/epson-inkjet-printer-201202w" "$out"
       substituteInPlace $ppd --replace "/cups/lib" "/lib/cups"
     done
-    cd epson-inkjet-printer-filter-${filterVersion}
+    cd epson-inkjet-printer-filter-${version}
   '';
 
   preConfigure = ''
