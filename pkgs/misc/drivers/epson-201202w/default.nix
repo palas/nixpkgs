@@ -17,7 +17,7 @@
 
     nativeBuildInputs = [ autoreconfHook file rpmextract ];
 
-    buildInputs = [ libjpeg cups ];
+    buildInputs = [ cups libjpeg ];
 
     unpackPhase = ''
       rpmextract $src
