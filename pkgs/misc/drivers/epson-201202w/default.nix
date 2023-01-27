@@ -70,7 +70,7 @@ stdenv.mkDerivation rec {
         };
     '';
     license = with licenses; [ lgpl21 epson ];
-    platforms = platforms.linux;
+    platforms = with platforms; linux ++ darwin;
     maintainers = with maintainers; [ nphilou ];
   };
 }
