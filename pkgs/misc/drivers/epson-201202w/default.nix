@@ -32,8 +32,11 @@
 
     preConfigure = ''
       chmod +x configure
-      export LDFLAGS="$LDFLAGS -Wl,--no-as-needed"
     '';
+    ldflags = [
+      "-Wl"
+      "--no-as-needed"
+    ];
 
     postInstall = ''
       cd ../epson-inkjet-printer-201202w-${version}
