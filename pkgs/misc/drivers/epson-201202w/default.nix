@@ -1,9 +1,9 @@
 { lib, stdenv, fetchurl, rpmextract, autoreconfHook, file, libjpeg, cups }:
 
   stdenv.mkDerivation rec {
+    pname = "epson-201202w";
     version = "1.0.0";
     filterVersion = "1.0.0";
-    pname = "epson-201202w";
 
     src = fetchurl {
       # NOTE: Don't forget to update the webarchive link too!
