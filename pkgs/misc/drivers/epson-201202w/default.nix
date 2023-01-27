@@ -15,7 +15,7 @@
       hash = "sha256-Rq3vDVJolFB+Yi2OiJbT7Lrf+yhJMdfbxGwGYqUNzY0=";
     };
 
-    nativeBuildInputs = [ rpmextract autoreconfHook file ];
+    nativeBuildInputs = [ autoreconfHook file rpmextract ];
 
     buildInputs = [ libjpeg cups ];
 
